@@ -1,0 +1,21 @@
+header {
+    @include flex-direction(row);
+    background-image: url(/assets/more-news-bg.jpg);
+    background-position: top;
+    h1 {
+        color: $black-variations;
+        font-size: $xlarge;
+        letter-spacing: -1px;
+        font-weight: 600;
+        margin-top: 7px;
+        padding-right: 5px;
+        @include text-shadow( 0px 0px 10px rgba(255,255,255,0.4));
+    }
+    .logo img {
+        width: 140px;
+    }
+    .lang-select {
+        text-align: right;
+    }
+
+}

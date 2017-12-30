@@ -1,18 +1,215 @@
 <!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Some test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <title>Some Test</title>
     <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body>
-<p>And here we go</p>
+<header >
+    <div class="container">
+        <a href="/en" class="logo"><img src="/assets/whiskey.png"></a>
+        <div class="header-meta">
+            <div class="lang-select">
+                <a href="/de/male"><img src="/assets/flag-de.png" width="32"></a>
+                <a href="/en/male"><img src="/assets/flag-en.png" width="32"></a>
+                <a href="/es/male"><img src="/assets/flag-es.png" width="32"></a>
+            </div>
+            <h1>How many drinks for your boyfriend?</h1>
+        </div>
+    </div>
+</header>
 
 
+<main class="app-main">
+    <div class="container">
+        <form name="male" method="post" action="/en/result">
+
+            <div class="row form-row">
+                <div class="four columns">
+                    <h4>Age <output class="age-out">22</output></h4>
+                </div>
+                <div class="eight columns">
+                    <input type="range" class="range" name="age" min="14" max="70" value="22" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider" id="js-rangeslider-0"><div class="rangeslider__fill" style="width: 101px;"></div><div class="rangeslider__handle" style="left: 85px;"></div></div>
+                </div>
+            </div>
+
+            <div class="row form-row">
+                <div class="four columns">
+                    <h4>Height (cm) <output class="height-out">176</output></h4>
+                </div>
+                <div class="eight columns">
+                    <input type="range" class="range" name="height" min="140" max="220" value="176" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider" id="js-rangeslider-1"><div class="rangeslider__fill" style="width: 283.75px;"></div><div class="rangeslider__handle" style="left: 267.75px;"></div></div>
+                </div>
+            </div>
+
+            <div class="row form-row">
+                <div class="four columns">
+                    <h4>Haircolor</h4>
+                </div>
+                <div class="eight columns">
+                    <select name="haircolor" class="u-full-width">
+                        <option value="blonde">blonde</option>
+                        <option value="brown">brown</option>
+                        <option value="black">black</option>
+                        <option value="red">red</option>
+                        <option value="grey">grey</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row form-row">
+                <div class="four columns">
+                    <h4>Hairlength</h4>
+                </div>
+                <div class="eight columns">
+                    <div class="justified">
+                        <nav class="segmented">
+                            <input type="radio" name="hair" value="long" id="l" checked="checked">
+                            <label for="l">
+                                long
+                            </label>
+
+                            <input type="radio" name="hair" value="middle" id="m">
+                            <label for="m">
+                                middle
+                            </label>
+
+                            <input type="radio" name="hair" value="short" id="s">
+                            <label for="s">
+                                short
+                            </label>
+
+                            <input type="radio" name="hair" value="bald" id="g">
+                            <label for="g">
+                                bald
+                            </label>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row form-row">
+                <div class="four columns">
+                    <h4>Eyecolor</h4>
+                </div>
+                <div class="eight columns">
+                    <label class="inline-radio">
+                        <input type="radio" name="eyecolor" value="blue" checked="checked">
+                        <span class="label-body">blue</span>
+                    </label>
+                    <label class="inline-radio">
+                        <input type="radio" name="eyecolor" value="green">
+                        <span class="label-body">green</span>
+                    </label>
+                    <label class="inline-radio">
+                        <input type="radio" name="eyecolor" value="brown">
+                        <span class="label-body">brown</span>
+                    </label>
+                    <label class="inline-radio">
+                        <input type="radio" name="eyecolor" value="grey">
+                        <span class="label-body">grey</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row form-row">
+                <div class="four columns">
+                    <h4>Beard</h4>
+                </div>
+                <div class="eight columns">
+                    <div class="justified">
+                        <nav class="segmented">
+                            <input type="radio" name="beard" value="none" id="beard-a" checked="checked">
+                            <label for="beard-a">
+                                <img src="/img/beard-none.png" alt="none">
+                            </label>
+
+                            <input type="radio" name="beard" value="small" id="beard-b">
+                            <label for="beard-b">
+                                <img src="/img/beard-small.png" alt="small">
+                            </label>
+
+                            <input type="radio" name="beard" value="middle" id="beard-c">
+                            <label for="beard-c">
+                                <img src="/img/beard-middle.png" alt="middle">
+                            </label>
+
+                            <input type="radio" name="beard" value="large" id="beard-d">
+                            <label for="beard-d">
+                                <img src="/img/beard-full.png" alt="large">
+                            </label>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row form-row">
+                <div class="four columns">
+                    <h4>Body</h4>
+                </div>
+                <div class="eight columns">
+                    <div class="justified">
+                        <nav class="segmented">
+                            <input type="radio" name="body" value="muscle" id="biceps-a" checked="checked">
+                            <label for="biceps-a">
+                                <img src="/img/body-1.png" alt="A">
+                            </label>
+
+                            <input type="radio" name="body" value="normal" id="biceps-b">
+                            <label for="biceps-b">
+                                <img src="/img/body-2.png" alt="B">
+                            </label>
+
+                            <input type="radio" name="body" value="chubby" id="biceps-c">
+                            <label for="biceps-c">
+                                <img src="/img/body-3.png" alt="C">
+                            </label>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="twelve columns submit-row">
+                    <input type="hidden" name="gender" value="male">
+                    <button type="submit" class="button-primary">calculate</button>
+                </div>
+            </div>
+        </form>
+        <form action="#">
+            <article>
+                <h1>Google Chrome</h1>
+                <p>Google Chrome is a free, open-source web browser developed by Google, released in 2008.</p>
+            </article>
+
+            <article>
+                <h1>Internet Explorer</h1>
+                <p>Internet Explorer is a free web browser from Microsoft, released in 1995.</p>
+            </article>
+
+            <article>
+                <h1>Mozilla Firefox</h1>
+                <p>Firefox is a free, open-source web browser from Mozilla, released in 2004.</p>
+            </article>
+        </form>
+    </div>
+
+
+</main>
+
+
+
+<footer>
+    <div class="container">
+        just a footer
+    </div>
+</footer>
 <script src="./dist/app.js"></script>
 </body>
 </html>

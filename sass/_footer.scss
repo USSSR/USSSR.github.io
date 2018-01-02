@@ -1,0 +1,25 @@
+footer {
+    @include align-items(center);
+    padding: 0.5em 0;
+    font-size: 10px;
+    color: $footer-hover;
+    a {
+        color: $footer-hover;
+        text-decoration: none;
+        &:hover, &:visited {
+            color: $visited;
+        }
+    }
+    p {
+        margin: 0;
+        @include relative(-9px)
+    }
+    .eight {
+        @include flexbox();
+        @include justify-content(flex-end);
+        img {
+            @include relative(12px)
+        }
+    }
+
+}

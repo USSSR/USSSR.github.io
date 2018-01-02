@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <title>Some Test</title>
+    <link rel="stylesheet" href="node_modules/rangeslider-pure/dist/range-slider.css">
     <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body>
@@ -27,32 +28,36 @@
 
 <main class="app-main">
     <div class="container">
-        <form name="male" method="post" action="/en/result">
-
-            <div class="row form-row">
-                <div class="four columns">
-                    <h4>Age <output class="age-out">22</output></h4>
+        <form name="male" method="post" action="#">
+            <div class="age">
+                <div class="four">
+                    <h4>Age <output id="age-out">22</output></h4>
                 </div>
-                <div class="eight columns">
-                    <input type="range" class="range" name="age" min="14" max="70" value="22" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider" id="js-rangeslider-0"><div class="rangeslider__fill" style="width: 101px;"></div><div class="rangeslider__handle" style="left: 85px;"></div></div>
+                <div class="eight">
+                    <div class="slidecontainer">
+                        <input type="range" name="age" min="14" max="70" value="22" class="slider" id="age" data-out="age-out">
+                    </div>
                 </div>
             </div>
-
-            <div class="row form-row">
+            <div class="height">
                 <div class="four columns">
-                    <h4>Height (cm) <output class="height-out">176</output></h4>
+                    <h4>Height (cm) <output id="height-out">176</output></h4>
                 </div>
-                <div class="eight columns">
+                <div class="eight">
                     <input type="range" class="range" name="height" min="140" max="220" value="176" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider" id="js-rangeslider-1"><div class="rangeslider__fill" style="width: 283.75px;"></div><div class="rangeslider__handle" style="left: 267.75px;"></div></div>
+                    <div class="slidecontainer">
+                        <input type="range" name="age" min="140" max="220" value="176" class="slider" id="height" data-out="height-out">
+                    </div>
+
                 </div>
             </div>
 
-            <div class="row form-row">
-                <div class="four columns">
+            <div class="haircolor">
+                <div class="four">
                     <h4>Haircolor</h4>
                 </div>
-                <div class="eight columns">
-                    <select name="haircolor" class="u-full-width">
+                <div class="eight">
+                    <select name="haircolor">
                         <option value="blonde">blonde</option>
                         <option value="brown">brown</option>
                         <option value="black">black</option>
@@ -62,11 +67,11 @@
                 </div>
             </div>
 
-            <div class="row form-row">
-                <div class="four columns">
+            <div class="hairlength">
+                <div class="four">
                     <h4>Hairlength</h4>
                 </div>
-                <div class="eight columns">
+                <div class="eight">
                     <div class="justified">
                         <nav class="segmented">
                             <input type="radio" name="hair" value="long" id="l" checked="checked">
@@ -93,11 +98,11 @@
                 </div>
             </div>
 
-            <div class="row form-row">
-                <div class="four columns">
+            <div class="eyecolor">
+                <div class="four">
                     <h4>Eyecolor</h4>
                 </div>
-                <div class="eight columns">
+                <div class="eight">
                     <label class="inline-radio">
                         <input type="radio" name="eyecolor" value="blue" checked="checked">
                         <span class="label-body">blue</span>
@@ -117,99 +122,88 @@
                 </div>
             </div>
 
-            <div class="row form-row">
-                <div class="four columns">
+            <div class="beard">
+                <div class="four">
                     <h4>Beard</h4>
                 </div>
-                <div class="eight columns">
+                <div class="eight">
                     <div class="justified">
                         <nav class="segmented">
                             <input type="radio" name="beard" value="none" id="beard-a" checked="checked">
                             <label for="beard-a">
-                                <img src="/img/beard-none.png" alt="none">
+                                <img src="/assets/beard-none.png" alt="none">
                             </label>
 
                             <input type="radio" name="beard" value="small" id="beard-b">
                             <label for="beard-b">
-                                <img src="/img/beard-small.png" alt="small">
+                                <img src="/assets/beard-small.png" alt="small">
                             </label>
 
                             <input type="radio" name="beard" value="middle" id="beard-c">
                             <label for="beard-c">
-                                <img src="/img/beard-middle.png" alt="middle">
+                                <img src="/assets/beard-middle.png" alt="middle">
                             </label>
 
                             <input type="radio" name="beard" value="large" id="beard-d">
                             <label for="beard-d">
-                                <img src="/img/beard-full.png" alt="large">
+                                <img src="/assets/beard-full.png" alt="large">
                             </label>
                         </nav>
                     </div>
                 </div>
             </div>
 
-            <div class="row form-row">
-                <div class="four columns">
+            <div class="body">
+                <div class="four">
                     <h4>Body</h4>
                 </div>
-                <div class="eight columns">
+                <div class="eight">
                     <div class="justified">
                         <nav class="segmented">
                             <input type="radio" name="body" value="muscle" id="biceps-a" checked="checked">
                             <label for="biceps-a">
-                                <img src="/img/body-1.png" alt="A">
+                                <img src="/assets/body-1.png" alt="A">
                             </label>
 
                             <input type="radio" name="body" value="normal" id="biceps-b">
                             <label for="biceps-b">
-                                <img src="/img/body-2.png" alt="B">
+                                <img src="/assets/body-2.png" alt="B">
                             </label>
 
                             <input type="radio" name="body" value="chubby" id="biceps-c">
                             <label for="biceps-c">
-                                <img src="/img/body-3.png" alt="C">
+                                <img src="/assets/body-3.png" alt="C">
                             </label>
                         </nav>
                     </div>
                 </div>
             </div>
 
-
             <div class="row">
-                <div class="twelve columns submit-row">
+                <div class="twelve">
                     <input type="hidden" name="gender" value="male">
-                    <button type="submit" class="button-primary">calculate</button>
+                    <button type="submit" class="button">calculate</button>
                 </div>
             </div>
-        </form>
-        <form action="#">
-            <article>
-                <h1>Google Chrome</h1>
-                <p>Google Chrome is a free, open-source web browser developed by Google, released in 2008.</p>
-            </article>
-
-            <article>
-                <h1>Internet Explorer</h1>
-                <p>Internet Explorer is a free web browser from Microsoft, released in 1995.</p>
-            </article>
-
-            <article>
-                <h1>Mozilla Firefox</h1>
-                <p>Firefox is a free, open-source web browser from Mozilla, released in 2004.</p>
-            </article>
         </form>
     </div>
 
 
 </main>
 
-
-
-<footer>
-    <div class="container">
-        just a footer
+<footer class="container">
+    <div class="four">
+        <div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/NerdMeet" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=210330259004526&amp;container_width=294&amp;href=https%3A%2F%2Fwww.facebook.com%2FNerdMeet&amp;layout=button_count&amp;locale=de_DE&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 114px; height: 20px;"><iframe name="fab38f80338e54" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.3/plugins/like.php?action=like&amp;app_id=210330259004526&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FlY4eZXm_YWu.js%3Fversion%3D42%23cb%3Dfc3a7faf67c57c%26domain%3Dkamelrechner.de%26origin%3Dhttp%253A%252F%252Fkamelrechner.de%252Ff363aed8f579028%26relation%3Dparent.parent&amp;container_width=294&amp;href=https%3A%2F%2Fwww.facebook.com%2FNerdMeet&amp;layout=button_count&amp;locale=de_DE&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 114px; height: 20px;" class=""></iframe></span></div>
+    </div>
+    <div class="eight">
+        <p class="footline">
+            <a href="https://www.youtube.com/watch?v=T5TPrwtkKIU">Privacy Statement</a> · <a href="https://www.youtube.com/watch?v=wGnRuqMzEJk">Imprint</a> · <a class="mrnerd" href="https://www.facebook.com/oleg.zaiats.9">Mr. Nerd
+        </a>
+            <img src="assets/mrnerd.png" alt="">
+        </p>
     </div>
 </footer>
+
 <script src="./dist/app.js"></script>
 </body>
 </html>

@@ -4,3 +4,12 @@
     @include flexbox();
     @include justify-content(space-around);
 }
+
+
+.four {
+    width: 32%;
+}
+.eight {
+    width: 66%;
+    margin-left: 4%;
+}

@@ -1,0 +1,24 @@
+.rangeSlider {
+    @include box-shadow(inset 0px 1px 3px rgba(0,0,0,0.3));
+    @include border-radius(10px);
+    background: $grey;
+    cursor: pointer;
+    display: block;
+    height: 10px;
+    width: 100%;
+
+}
+.rangeSlider__fill {
+    background: $orange-slider;
+    position: absolute;
+    top: 0;
+}
+.rangeSlider__handle {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -11px;
+    &:after {
+        content: none;
+    }
+}

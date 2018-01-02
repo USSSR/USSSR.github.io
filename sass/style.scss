@@ -3,6 +3,11 @@
 @import "mixins";
 @import "grid";
 @import "header";
+@import "footer";
+@import "slider";
+@import "main";
+
+
 
 body {
     padding: 0;
@@ -11,9 +16,4 @@ body {
 
 }
 
-html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
 

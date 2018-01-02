@@ -1,0 +1,22 @@
+.app-main {
+    form {
+        width: 100%;
+        > div {
+            @include flexbox();
+            @include flex-direction(row);
+            @include justify-content(center);
+            @include align-items(center);
+            border-bottom: 1px solid $border-grey;
+        }
+        h4 {
+            font-size: 20px;
+            font-weight: $light;
+        }
+    }
+
+    .slidecontainer {
+        width: 100%;
+        @import "slider";
+    }
+
+}

@@ -17,6 +17,12 @@
   justify-content: space-around;
   -ms-flex-pack: space-around; }
 
+.four {
+  width: 32%; }
+
+.eight {
+  width: 66%; }
+
 header {
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
@@ -36,6 +42,35 @@ header {
     width: 140px; }
   header .lang-select {
     text-align: right; }
+
+.app-main form {
+  width: 100%; }
+  .app-main form > div {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7; }
+  .app-main form h4 {
+    font-size: 20px;
+    font-weight: 300; }
+
+.app-main .slidecontainer {
+  width: 100%; }
 
 body {
   padding: 0;

@@ -1,0 +1,35 @@
+#search-results {
+    display: none;
+    text-align: center;
+    margin-bottom: 28px;
+    h2 {
+        font-size: 30px;
+        font-weight:$light;
+    }
+    #total {
+        font-weight: 600;
+        display: block;
+        font-size: 3em;
+    }
+    p {
+        margin-bottom: 25px;
+    }
+    a {
+        @include border-radius(3px);
+        font-size: 15px;
+        color: $white;
+        padding: 10px;
+        text-decoration: none;
+        margin: 2px;
+        width: 100%;
+        &:first-of-type {
+            background-color: $facebook;
+        }
+        &:nth-of-type(2) {
+            background-color: $twitter;
+        }
+        &:last-of-type {
+            background-color: $whatsapp;
+        }
+    }
+}

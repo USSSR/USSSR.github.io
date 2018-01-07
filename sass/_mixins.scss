@@ -74,6 +74,12 @@
     @include position(relative, $args...);
 }
 
+@mixin gradient($direction, $list) {
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list);
+}
 
 /////////////
 ///FLEXBOX///

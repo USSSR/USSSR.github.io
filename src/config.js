@@ -71,7 +71,6 @@ const config = {
 			criteria: [0, 1, 2, 3, 4],
 			koef:     [7, 4, 0, 2, -2 ]
 		},
-
 	}
 };
 export default config;

@@ -3,7 +3,6 @@ import config from './config';
 import rangesliderJs from '../node_modules/rangeslider-pure/dist/range-slider';
 import serializerJs from '../node_modules/form-serialize';
 import {TweenMax} from '../node_modules/gsap';
-
 window.app = function () {
 	const choices = [...document.getElementsByClassName('pick')],
 		homepage = document.getElementById('homepage'),
@@ -163,7 +162,6 @@ return template(config[forGender]);
 			getWhatYouWorth(mainData);
 		});
 	},
-
 	initContent = (content, gender) => {
 		homepage.innerHTML = '';
 		homepage.insertAdjacentHTML('beforeend', content);
@@ -179,7 +177,6 @@ return template(config[forGender]);
 			content = buildAform(gender);
 		initContent(content, gender);
 	}));
-
 	function closestMax(arr, closestTo){
 		let closest = Math.max.apply(null, arr);
 		for(let i = 0; i < arr.length; i++){

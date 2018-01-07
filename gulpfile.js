@@ -12,7 +12,7 @@ var reload = browserSync.reload;
 
 var config = {
 	entryFile: './src/app.js',
-	outputDir: './dist/',
+	outputDir: './assets/js/',
 	outputFile: 'app.js'
 };
 

@@ -181,9 +181,9 @@ return template(config[forGender]);
 	}));
 
 	function closestMax(arr, closestTo){
-		let closest = Math.max.apply(null, arr); //Get the highest number in arr in case it match nothing.
-		for(let i = 0; i < arr.length; i++){ //Loop the array
-			if(arr[i] >= closestTo && arr[i] < closest) closest = arr[i]; //Check if it's higher than your number, but lower than your closest value
+		let closest = Math.max.apply(null, arr);
+		for(let i = 0; i < arr.length; i++){
+			if(arr[i] >= closestTo && arr[i] < closest) closest = arr[i];
 		}
 		return closest;
 	}

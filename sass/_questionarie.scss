@@ -1,6 +1,30 @@
 form {
     width: 100%;
     > div {
+        @include flexbox();
+        @include flex-direction(row);
+        @include justify-content(center);
+        @include align-items(center);
+        @include xm {
+            @include flex-direction(column);
+            padding-bottom: 20px;
+            &:first-of-type, &:nth-of-type(2) {
+                border-bottom: none;
+            }
+            .eight {
+                margin-left: 0;
+            }
+            div .segmented {
+                margin: 0;
+            }
+            .twelve {
+                width: 100%;
+                button {
+                    width: 100%;
+                }
+            }
+        }
+        border-bottom: 1px solid $border-grey;
         .four {
             @include align-self(flex-start);
         }
@@ -8,14 +32,7 @@ form {
             margin-top: 10px;
         }
         &:last-of-type {
-            padding: 1.5em 0 3em 0;
-        }
-        @include flexbox();
-        @include flex-direction(row);
-        @include justify-content(center);
-        @include align-items(center);
-        border-bottom: 1px solid $border-grey;
-        &:last-of-type {
+            padding: 1.5em 0 1.5em 0;
             border-bottom: none;
         }
         select {
@@ -36,6 +53,9 @@ form {
         }
         .segmented {
             @include flexbox();
+            @include xm {
+                padding-right: 6px;
+            }
             margin: 1.5em 0;
             input[type=radio]{
                 display: none;
@@ -80,6 +100,9 @@ form {
         }
         .inline-radio {
             margin-right: 10px;
+            @include xm {
+                margin-right: 5px;
+            }
         }
     }
     h4 {

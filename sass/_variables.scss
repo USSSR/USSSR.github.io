@@ -1,33 +1,12 @@
 /*Colors*/
 $black-variations: rgb(34,34,34);
-$header_background: rgba(241, 242, 240, 0.6);
-$golden: #94840C;
-$golden-light: #E8DF9C;
-$golden-variation: #81720D;
-$yellow-variations: #C5B015;
 $orange-slider: #e8972c;
 $orange-dark: #d28115;
 $white: #ffffff;
 $white-select: #D1D1D1;
-$white-variation: #F8FEFF;
-$white-grey: #DFF6FB;
-$light-white: #A1D7E2;
-$breeze: #8CC1CC;
-$breeze-light: #176274;
-$breeze-dark: #0E5361;
-$breeze-copyright: #0F424E;
-$blue: #187588;
 $facebook: #305c99;
 $twitter: #00cdff;
 $whatsapp: #25D366;
-$blue-light: #2192A8;
-$breeze-variation:  #A6D4DD;
-$pink: #C50475;
-$pink-variations: #D22888;
-$pink-add: #C1004D;
-$orange: #F25F5F;
-$cyan-light: #E4F7FC;;
-$light-blue: #D6EEF2;
 $border-grey: #e7e7e7;
 $grey: #e6e6e6;
 $visited: #666;
@@ -45,8 +24,7 @@ $normal: 500;
 $bold: 900;
 
 /*breakpoints*/
-$breakpoints: (
-        'small'  : 767px,
-        'medium' : 992px,
-        'large'  : 1200px
-);
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;

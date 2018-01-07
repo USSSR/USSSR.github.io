@@ -1,22 +1,25 @@
 .container {
-    margin: 0 auto;
-    max-width: 960px;
     @include flexbox();
     @include justify-content(space-around);
+    @include xm {
+        padding: 0 17px;
+    }
+    @include sm {
+        width: 80%;
+    }
+    margin: 0 auto;
+    max-width: 960px;
 }
-
-
 .four {
     width: 32%;
+    @include xm {
+        width: 100%;
+    }
 }
 .eight {
     width: 66%;
     margin-left: 4%;
-}
-.six {
-    width:48%;
-}
-.twelve {
-    width: 100%;
-    text-align: center;
+    @include xm {
+        width: 100%;
+    }
 }

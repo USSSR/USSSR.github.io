@@ -66,9 +66,7 @@ gulp.task('browser-sync', ['sass'], function() {
 
 gulp.task('sass', function () {
 	return gulp.src('./sass/**/*.scss')
-		.pipe(sass({
-			includePaths: ['node_modules']
-		}))
+		.pipe(sass())
 		.pipe(gulp.dest('css'))
 		.pipe(browserSync.reload({stream: true}));
 });

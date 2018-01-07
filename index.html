@@ -13,181 +13,49 @@
 <body>
 <header >
     <div class="container">
-        <a href="/en" class="logo"><img src="/assets/whiskey.png"></a>
+        <a href="/" class="logo"><img src="/assets/whiskey.png"></a>
         <div class="header-meta">
             <div class="lang-select">
-                <a href="/de/male"><img src="/assets/flag-de.png" width="32"></a>
-                <a href="/en/male"><img src="/assets/flag-en.png" width="32"></a>
-                <a href="/es/male"><img src="/assets/flag-es.png" width="32"></a>
+                <a href="javascript:void(0)"><img src="/assets/flag-de.png" width="32"></a>
+                <a href="javascript:void(0)"><img src="/assets/flag-en.png" width="32"></a>
+                <a href="javascript:void(0)"><img src="/assets/flag-es.png" width="32"></a>
             </div>
             <h1>How many drinks for your boyfriend?</h1>
         </div>
     </div>
 </header>
 
-
 <main class="app-main">
-    <div class="container">
-        <form name="male" method="post" action="#">
-            <div class="age">
-                <div class="four">
-                    <h4>Age <output id="age-out">22</output></h4>
-                </div>
-                <div class="eight">
-                    <div class="slidecontainer">
-                        <input type="range" name="age" min="14" max="70" value="22" class="slider" id="age" data-out="age-out">
-                    </div>
-                </div>
-            </div>
-            <div class="height">
-                <div class="four columns">
-                    <h4>Height (cm) <output id="height-out">176</output></h4>
-                </div>
-                <div class="eight">
-                    <input type="range" class="range" name="height" min="140" max="220" value="176" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider" id="js-rangeslider-1"><div class="rangeslider__fill" style="width: 283.75px;"></div><div class="rangeslider__handle" style="left: 267.75px;"></div></div>
-                    <div class="slidecontainer">
-                        <input type="range" name="age" min="140" max="220" value="176" class="slider" id="height" data-out="height-out">
-                    </div>
 
-                </div>
-            </div>
+    <div class="container" id="homepage">
+        <div class="twelve">
+            <p class="main-explanation">Here you can calculate how many camels your girlfriend or boyfriend is worth. But first we need some information about the person.</p>
+        </div>
+        <div class="six">
+            <a href="javascript:void(0)" class="pick" data-gender="female">
+                <img src="/assets/select-woman.png" >
+                <span>How many drinks for your girlfriend?</span></a>
+        </div>
+        <div class="six">
+            <a href="javascript:void(0)" class="pick" data-gender="male">
+                <img src="/assets/select-man.png" >
+                <span>How many drinks for your boyfriend?</span></a>
+        </div>
 
-            <div class="haircolor">
-                <div class="four">
-                    <h4>Haircolor</h4>
-                </div>
-                <div class="eight">
-                    <select name="haircolor">
-                        <option value="blonde">blonde</option>
-                        <option value="brown">brown</option>
-                        <option value="black">black</option>
-                        <option value="red">red</option>
-                        <option value="grey">grey</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="hairlength">
-                <div class="four">
-                    <h4>Hairlength</h4>
-                </div>
-                <div class="eight">
-                    <div class="justified">
-                        <nav class="segmented">
-                            <input type="radio" name="hair" value="long" id="l" checked="checked">
-                            <label for="l">
-                                long
-                            </label>
-
-                            <input type="radio" name="hair" value="middle" id="m">
-                            <label for="m">
-                                middle
-                            </label>
-
-                            <input type="radio" name="hair" value="short" id="s">
-                            <label for="s">
-                                short
-                            </label>
-
-                            <input type="radio" name="hair" value="bald" id="g">
-                            <label for="g">
-                                bald
-                            </label>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <div class="eyecolor">
-                <div class="four">
-                    <h4>Eyecolor</h4>
-                </div>
-                <div class="eight">
-                    <label class="inline-radio">
-                        <input type="radio" name="eyecolor" value="blue" checked="checked">
-                        <span class="label-body">blue</span>
-                    </label>
-                    <label class="inline-radio">
-                        <input type="radio" name="eyecolor" value="green">
-                        <span class="label-body">green</span>
-                    </label>
-                    <label class="inline-radio">
-                        <input type="radio" name="eyecolor" value="brown">
-                        <span class="label-body">brown</span>
-                    </label>
-                    <label class="inline-radio">
-                        <input type="radio" name="eyecolor" value="grey">
-                        <span class="label-body">grey</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="beard">
-                <div class="four">
-                    <h4>Beard</h4>
-                </div>
-                <div class="eight">
-                    <div class="justified">
-                        <nav class="segmented">
-                            <input type="radio" name="beard" value="none" id="beard-a" checked="checked">
-                            <label for="beard-a">
-                                <img src="/assets/beard-none.png" alt="none">
-                            </label>
-
-                            <input type="radio" name="beard" value="small" id="beard-b">
-                            <label for="beard-b">
-                                <img src="/assets/beard-small.png" alt="small">
-                            </label>
-
-                            <input type="radio" name="beard" value="middle" id="beard-c">
-                            <label for="beard-c">
-                                <img src="/assets/beard-middle.png" alt="middle">
-                            </label>
-
-                            <input type="radio" name="beard" value="large" id="beard-d">
-                            <label for="beard-d">
-                                <img src="/assets/beard-full.png" alt="large">
-                            </label>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <div class="body">
-                <div class="four">
-                    <h4>Body</h4>
-                </div>
-                <div class="eight">
-                    <div class="justified">
-                        <nav class="segmented">
-                            <input type="radio" name="body" value="muscle" id="biceps-a" checked="checked">
-                            <label for="biceps-a">
-                                <img src="/assets/body-1.png" alt="A">
-                            </label>
-
-                            <input type="radio" name="body" value="normal" id="biceps-b">
-                            <label for="biceps-b">
-                                <img src="/assets/body-2.png" alt="B">
-                            </label>
-
-                            <input type="radio" name="body" value="chubby" id="biceps-c">
-                            <label for="biceps-c">
-                                <img src="/assets/body-3.png" alt="C">
-                            </label>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="twelve">
-                    <input type="hidden" name="gender" value="male">
-                    <button type="submit" class="button">calculate</button>
-                </div>
-            </div>
-        </form>
     </div>
-
+    <div class="container" id="search-results">
+        <h2>Your boyfriend ist worth <span id="total">0</span> drinks.</h2>
+        <p>
+            <a class="fb_button" href="https://www.facebook.com/sharer.php?u=http://kamelrechner.de/">Post on facebook</a>
+            <a class="tw_button" href="https://twitter.com/share?via=Kamelrechner&amp;url=http://kamelrechner.de/&amp;text=My girlfriend is worth 75 camels.">Post on twitter</a>
+            <a class="wa_button" href="whatsapp://send?text=My girlfriend is worth 75 camels. http://kamelrechner.de/">Send with WhatsApp</a>
+        </p>
+        <div class="twelve">
+            <form action="/" method="get">
+                <button type="submit" class="button" id="calculate">calculate again?</button>
+            </form>
+        </div>
+    </div>
 
 </main>
 

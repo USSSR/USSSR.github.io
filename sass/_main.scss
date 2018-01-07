@@ -1,110 +1,41 @@
 .app-main {
-    form {
-        width: 100%;
-        > div {
-            .four {
-                @include align-self(flex-start);
-            }
-            &:first-of-type {
-                margin-top: 10px;
-            }
-            &:last-of-type {
-                padding: 1.5em 0 3em 0;
-            }
-            @include flexbox();
-            @include flex-direction(row);
-            @include justify-content(center);
-            @include align-items(center);
-            border-bottom: 1px solid $border-grey;
-            select {
-                @include border-radius(4px);
-                @include box-shadow(none);
-                height: 38px;
-                width: 100%;
-                color: $black-variations;
-                font-size: 15px;
-                padding: 6px 10px;
-                background-color: $white;
-                border: 1px solid $white-select;
-                box-sizing: border-box;
-                &:focus {
-                    outline: 0;
-                    border: 1px solid $orange-slider;
-                }
-            }
-            .segmented {
-                @include flexbox();
-                margin: 1.5em 0;
-                input[type=radio]{
-                    display: none;
-                }
-                input:first-child + label {
-                    border-top-left-radius: 4px;
-                    border-bottom-left-radius: 4px;
-                }
-                input:checked + label, label.selected, label.checked {
-                    background-color: $orange-slider;
-                    color: $white;
-                }
-                label {
-                    @include flex-grow(1);
-                    @include border-radius(0);
-                    @include text-shadow($white);
-                    &:last-child {
-                        border-top-right-radius: 4px;
-                        border-bottom-right-radius: 4px;
-                    }
-                    img {
-                        @include transition(.3s ease);
-                        width: 60%;
-                        margin-top: 2px;
-                        &:hover {
-                            @include scale((1.1,1.1));
-                        }
-                    }
-
-                    font-weight: 600;
-                    box-sizing: border-box;
-                    text-align: center;
-                    background-color: $white;
-                    border: 1px solid $orange-slider;
-                    color: $orange-slider;
-                    padding: 5px 5px;
-                    font-size: 12px;
-                    cursor: pointer;
-                    margin-right: -6px;
-                }
-
-            }
-            .inline-radio {
-                margin-right: 10px;
-            }
-        }
-        h4 {
-            font-size: 20px;
-            font-weight: $light;
-        }
-        output {
-            float: right;
-        }
-        button[type=submit] {
-            @include border-radius(4px);
-            height: 48px;
-            width: auto;
-            color: $white;
-            background-color: $orange-slider;
-            border: 1px solid $orange-slider;
-            line-height: 48px;
-            padding: 0 30px;
-            text-align: center;
+    #homepage {
+        @include flex-wrap(wrap);
+        @include justify-content(space-between);
+        margin-bottom: 1em;
+        p.main-explanation {
             font-size: 15px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-transform: uppercase;
+        }
+        .pick {
+            @include flexbox();
+            @include flex-direction(column);
+            @include align-items(center);
+            @include border-radius(3px);
+            img {
+                @include transition(transform 0.3s);
+                width: 200px;
+            }
+            border: 1px solid $white-select;
+            color: $orange-slider;
+            margin-bottom: 5px;
             text-decoration: none;
-            white-space: nowrap;
-            cursor: pointer;
-            box-sizing: border-box;
+            &:hover {
+                @include gradient(to bottom,(rgba(255,255,255,1) 0%,rgba(255,250,214,1) 100%));
+                color: $orange-dark;
+                outline: 0;
+                img {
+                    @include scale((1.1,1.1));
+                }
+            }
+            span {
+                z-index: 2;
+                background-color: $white;
+                text-align: center;
+                font-size: 30px;
+                padding: 1em;
+                line-height: 1.25em;
+                border-top: 1px solid $white-select;
+            }
         }
     }
 

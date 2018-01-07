@@ -24,6 +24,13 @@
   width: 66%;
   margin-left: 4%; }
 
+.six {
+  width: 48%; }
+
+.twelve {
+  width: 100%;
+  text-align: center; }
+
 header {
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
@@ -41,6 +48,8 @@ header {
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4); }
   header .logo img {
     width: 140px; }
+    header .logo img:hover {
+      opacity: 0.7; }
   header .lang-select {
     text-align: right; }
 
@@ -49,6 +58,7 @@ footer {
   -moz-align-items: center;
   -ms-align-items: center;
   align-items: center;
+  border-top: 1px solid #D1D1D1;
   padding: 0.5em 0;
   font-size: 10px;
   color: #d4d4d4; }
@@ -76,6 +86,135 @@ footer {
       position: relative;
       top: 12px; }
 
+form {
+  width: 100%; }
+  form > div {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7; }
+    form > div .four {
+      -webkit-align-self: flex-start;
+      -moz-align-self: flex-start;
+      -ms-align-self: flex-start;
+      align-self: flex-start; }
+    form > div:first-of-type {
+      margin-top: 10px; }
+    form > div:last-of-type {
+      padding: 1.5em 0 3em 0; }
+    form > div:last-of-type {
+      border-bottom: none; }
+    form > div select {
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      height: 38px;
+      width: 100%;
+      color: #222222;
+      font-size: 15px;
+      padding: 6px 10px;
+      background-color: #ffffff;
+      border: 1px solid #D1D1D1;
+      box-sizing: border-box; }
+      form > div select:focus {
+        outline: 0;
+        border: 1px solid #e8972c; }
+    form > div .segmented {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      margin: 1.5em 0; }
+      form > div .segmented input[type=radio] {
+        display: none; }
+      form > div .segmented input:first-child + label {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px; }
+      form > div .segmented input:checked + label, form > div .segmented label.selected, form > div .segmented label.checked {
+        background-color: #e8972c;
+        color: #ffffff; }
+      form > div .segmented label {
+        -webkit-flex-grow: 1;
+        -moz-flex-grow: 1;
+        -ms-flex-grow: 1;
+        flex-grow: 1;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        text-shadow: #ffffff;
+        font-weight: 600;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: #ffffff;
+        border: 1px solid #e8972c;
+        color: #e8972c;
+        padding: 5px 5px;
+        font-size: 12px;
+        cursor: pointer;
+        margin-right: -6px; }
+        form > div .segmented label:last-child {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px; }
+        form > div .segmented label img {
+          -moz-transition: 0.3s ease;
+          -o-transition: 0.3s ease;
+          -webkit-transition: 0.3s ease;
+          transition: 0.3s ease;
+          width: 60%;
+          margin-top: 2px; }
+          form > div .segmented label img:hover {
+            -moz-transform: scale(1.1, 1.1);
+            -o-transform: scale(1.1, 1.1);
+            -ms-transform: scale(1.1, 1.1);
+            -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1); }
+    form > div .inline-radio {
+      margin-right: 10px; }
+  form h4 {
+    font-size: 20px;
+    font-weight: 300; }
+  form output {
+    float: right; }
+  form button[type=submit] {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    height: 48px;
+    width: auto;
+    color: #ffffff;
+    background-color: #e8972c;
+    border: 1px solid #e8972c;
+    line-height: 48px;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    box-sizing: border-box; }
+
 .rangeSlider {
   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
@@ -102,132 +241,97 @@ footer {
   .rangeSlider__handle:after {
     content: none; }
 
-.app-main form {
-  width: 100%; }
-  .app-main form > div {
+#search-results {
+  display: none;
+  text-align: center;
+  margin-bottom: 28px; }
+  #search-results h2 {
+    font-size: 30px;
+    font-weight: 300; }
+  #search-results #total {
+    font-weight: 600;
+    display: block;
+    font-size: 3em; }
+  #search-results p {
+    margin-bottom: 25px; }
+  #search-results a {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    margin: 2px;
+    width: 100%; }
+    #search-results a:first-of-type {
+      background-color: #305c99; }
+    #search-results a:nth-of-type(2) {
+      background-color: #00cdff; }
+    #search-results a:last-of-type {
+      background-color: #25D366; }
+
+.app-main #homepage {
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: space-between;
+  margin-bottom: 1em; }
+  .app-main #homepage p.main-explanation {
+    font-size: 15px; }
+  .app-main #homepage .pick {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    justify-content: center;
-    -ms-flex-pack: center;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-align-items: center;
     -moz-align-items: center;
     -ms-align-items: center;
     align-items: center;
-    border-bottom: 1px solid #e7e7e7; }
-    .app-main form > div .four {
-      -webkit-align-self: flex-start;
-      -moz-align-self: flex-start;
-      -ms-align-self: flex-start;
-      align-self: flex-start; }
-    .app-main form > div:first-of-type {
-      margin-top: 10px; }
-    .app-main form > div:last-of-type {
-      padding: 1.5em 0 3em 0; }
-    .app-main form > div select {
-      border-radius: 4px;
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      box-shadow: none;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      height: 38px;
-      width: 100%;
-      color: #222222;
-      font-size: 15px;
-      padding: 6px 10px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid #D1D1D1;
+    color: #e8972c;
+    margin-bottom: 5px;
+    text-decoration: none; }
+    .app-main #homepage .pick img {
+      -moz-transition: transform 0.3s;
+      -o-transition: transform 0.3s;
+      -webkit-transition: transform 0.3s;
+      transition: transform 0.3s;
+      width: 200px; }
+    .app-main #homepage .pick:hover {
+      background: -webkit-linear-gradient(to bottom, white 0%, #fffad6 100%);
+      background: -moz-linear-gradient(to bottom, white 0%, #fffad6 100%);
+      background: -o-linear-gradient(to bottom, white 0%, #fffad6 100%);
+      background: linear-gradient(to bottom, white 0%, #fffad6 100%);
+      color: #d28115;
+      outline: 0; }
+      .app-main #homepage .pick:hover img {
+        -moz-transform: scale(1.1, 1.1);
+        -o-transform: scale(1.1, 1.1);
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1); }
+    .app-main #homepage .pick span {
+      z-index: 2;
       background-color: #ffffff;
-      border: 1px solid #D1D1D1;
-      box-sizing: border-box; }
-      .app-main form > div select:focus {
-        outline: 0;
-        border: 1px solid #e8972c; }
-    .app-main form > div .segmented {
-      display: -webkit-box;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      margin: 1.5em 0; }
-      .app-main form > div .segmented input[type=radio] {
-        display: none; }
-      .app-main form > div .segmented input:first-child + label {
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px; }
-      .app-main form > div .segmented input:checked + label, .app-main form > div .segmented label.selected, .app-main form > div .segmented label.checked {
-        background-color: #e8972c;
-        color: #ffffff; }
-      .app-main form > div .segmented label {
-        -webkit-flex-grow: 1;
-        -moz-flex-grow: 1;
-        -ms-flex-grow: 1;
-        flex-grow: 1;
-        border-radius: 0;
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-        text-shadow: #ffffff;
-        font-weight: 600;
-        box-sizing: border-box;
-        text-align: center;
-        background-color: #ffffff;
-        border: 1px solid #e8972c;
-        color: #e8972c;
-        padding: 5px 5px;
-        font-size: 12px;
-        cursor: pointer;
-        margin-right: -6px; }
-        .app-main form > div .segmented label:last-child {
-          border-top-right-radius: 4px;
-          border-bottom-right-radius: 4px; }
-        .app-main form > div .segmented label img {
-          -moz-transition: 0.3s ease;
-          -o-transition: 0.3s ease;
-          -webkit-transition: 0.3s ease;
-          transition: 0.3s ease;
-          width: 60%;
-          margin-top: 2px; }
-          .app-main form > div .segmented label img:hover {
-            -moz-transform: scale(1.1, 1.1);
-            -o-transform: scale(1.1, 1.1);
-            -ms-transform: scale(1.1, 1.1);
-            -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1); }
-    .app-main form > div .inline-radio {
-      margin-right: 10px; }
-  .app-main form h4 {
-    font-size: 20px;
-    font-weight: 300; }
-  .app-main form output {
-    float: right; }
-  .app-main form button[type=submit] {
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    height: 48px;
-    width: auto;
-    color: #ffffff;
-    background-color: #e8972c;
-    border: 1px solid #e8972c;
-    line-height: 48px;
-    padding: 0 30px;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
-    box-sizing: border-box; }
+      text-align: center;
+      font-size: 30px;
+      padding: 1em;
+      line-height: 1.25em;
+      border-top: 1px solid #D1D1D1; }
 
 .app-main .slidecontainer {
   width: 100%; }

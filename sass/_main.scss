@@ -1,47 +1,67 @@
-.app-main {
-    #homepage {
-        @include flex-wrap(wrap);
-        @include justify-content(space-between);
-        margin-bottom: 1em;
-        p.main-explanation {
-            font-size: 15px;
+#homepage {
+    @include flex-direction(column);
+    margin-bottom: 1em;
+    p.main-explanation {
+        font-size: 15px;
+    }
+    .twelve {
+        @include flexbox();
+        @include flex-direction(row);
+        > :last-of-type {
+            margin-left: 30px;
         }
-        .pick {
-            @include flexbox();
+        @include xm {
             @include flex-direction(column);
-            @include align-items(center);
-            @include border-radius(3px);
-            img {
-                @include transition(transform 0.3s);
-                width: 200px;
-            }
-            border: 1px solid $white-select;
-            color: $orange-slider;
-            margin-bottom: 5px;
-            text-decoration: none;
-            &:hover {
-                @include gradient(to bottom,(rgba(255,255,255,1) 0%,rgba(255,250,214,1) 100%));
-                color: $orange-dark;
-                outline: 0;
-                img {
-                    @include scale((1.1,1.1));
-                }
-            }
-            span {
-                z-index: 2;
-                background-color: $white;
-                text-align: center;
-                font-size: 30px;
-                padding: 1em;
-                line-height: 1.25em;
-                border-top: 1px solid $white-select;
+            > :last-of-type {
+                margin-left: 0;
             }
         }
     }
-
-    .slidecontainer {
-        width: 100%;
-        @import "slider";
+    .pick {
+        @include flexbox();
+        @include flex-direction(column);
+        @include align-items(center);
+        @include border-radius(3px);
+        @include xm {
+            @include flex-direction(row);
+        }
+        img {
+            @include xm {
+                width: 30%;
+            }
+            @include transition(transform 0.3s);
+            width: 200px;
+        }
+        border: 1px solid $white-select;
+        color: $orange-slider;
+        margin-bottom: 5px;
+        text-decoration: none;
+        &:hover {
+            @include gradient(to bottom,(rgba(255,255,255,1) 0%,rgba(255,250,214,1) 100%));
+            color: $orange-dark;
+            outline: 0;
+            img {
+                @include scale((1.1,1.1));
+            }
+        }
+        span {
+            z-index: 2;
+            background-color: $white;
+            text-align: center;
+            font-size: 30px;
+            padding: 1em;
+            line-height: 1.25em;
+            border-top: 1px solid $white-select;
+            @include xm {
+                text-align: left;
+                border: none;
+                font-size: $medium;
+            }
+        }
     }
+}
 
+.slidecontainer {
+    width: 100%;
+    @import "slider";
 }

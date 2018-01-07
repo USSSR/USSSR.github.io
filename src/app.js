@@ -164,17 +164,20 @@ return template(config[forGender]);
 		});
 	},
 
-	initContent = (content) => {
+	initContent = (content, gender) => {
 		homepage.innerHTML = '';
 		homepage.insertAdjacentHTML('beforeend', content);
+		document.getElementById('default').style.display = 'none';
+		document.getElementById('gender').innerHTML = gender;
+		document.getElementById('user-choice').style.display = 'block';
 		rangesliderJs.create(document.getElementById('age'), config.rangeSlider);
 		rangesliderJs.create(document.getElementById('height'), config.rangeSlider);
 		emulateSubmit();
 	};
 	choices.forEach((choice) => choice.addEventListener('click', (evt) => {
-		const gender = evt.target.closest('a').dataset.gender;
-		const content = buildAform(gender);
-		initContent(content);
+		const gender = evt.target.closest('a').dataset.gender,
+			content = buildAform(gender);
+		initContent(content, gender);
 	}));
 
 	function closestMax(arr, closestTo){

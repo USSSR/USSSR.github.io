@@ -7,20 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <title>Some Test</title>
-    <link rel="stylesheet" href="node_modules/rangeslider-pure/dist/range-slider.css">
     <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body>
 <header >
     <div class="container">
-        <a href="/" class="logo"><img src="/assets/whiskey.png"></a>
         <div class="header-meta">
-            <div class="lang-select">
-                <a href="javascript:void(0)"><img src="/assets/flag-de.png" width="32"></a>
-                <a href="javascript:void(0)"><img src="/assets/flag-en.png" width="32"></a>
-                <a href="javascript:void(0)"><img src="/assets/flag-es.png" width="32"></a>
-            </div>
-            <h1>How many drinks for your boyfriend?</h1>
+            <a href="/" class="logo"><img src="/assets/whiskey.png"></a>
+            <h1>
+                <span id="default">Drinks Calculator</span>
+                <span id="user-choice">
+                    How many drinks for your <span id="gender"></span>?
+                </span>
+            </h1>
+        </div>
+        <div class="lang-select">
+            <a href="javascript:void(0)"><img src="/assets/flag-de.png"></a>
+            <a href="javascript:void(0)"><img src="/assets/flag-en.png"></a>
+            <a href="javascript:void(0)"><img src="/assets/flag-es.png"></a>
         </div>
     </div>
 </header>
@@ -28,28 +32,30 @@
 <main class="app-main">
 
     <div class="container" id="homepage">
+        <p class="main-explanation">Here you can calculate how many camels your girlfriend or boyfriend is worth. But first we need some information about the person.</p>
         <div class="twelve">
-            <p class="main-explanation">Here you can calculate how many camels your girlfriend or boyfriend is worth. But first we need some information about the person.</p>
+            <div class="six">
+                <a href="javascript:void(0)" class="pick" data-gender="female">
+                    <img src="/assets/select-woman.png" >
+                    <span>How many drinks for your girlfriend?</span></a>
+            </div>
+            <div class="six">
+                <a href="javascript:void(0)" class="pick" data-gender="male">
+                    <img src="/assets/select-man.png" >
+                    <span>How many drinks for your boyfriend?</span></a>
+            </div>
         </div>
-        <div class="six">
-            <a href="javascript:void(0)" class="pick" data-gender="female">
-                <img src="/assets/select-woman.png" >
-                <span>How many drinks for your girlfriend?</span></a>
-        </div>
-        <div class="six">
-            <a href="javascript:void(0)" class="pick" data-gender="male">
-                <img src="/assets/select-man.png" >
-                <span>How many drinks for your boyfriend?</span></a>
-        </div>
+
 
     </div>
     <div class="container" id="search-results">
         <h2>Your boyfriend ist worth <span id="total">0</span> drinks.</h2>
-        <p>
+        <div class="twelwe social">
             <a class="fb_button" href="https://www.facebook.com/sharer.php?u=http://kamelrechner.de/">Post on facebook</a>
             <a class="tw_button" href="https://twitter.com/share?via=Kamelrechner&amp;url=http://kamelrechner.de/&amp;text=My girlfriend is worth 75 camels.">Post on twitter</a>
             <a class="wa_button" href="whatsapp://send?text=My girlfriend is worth 75 camels. http://kamelrechner.de/">Send with WhatsApp</a>
-        </p>
+        </div>
+
         <div class="twelve">
             <form action="/" method="get">
                 <button type="submit" class="button" id="calculate">calculate again?</button>

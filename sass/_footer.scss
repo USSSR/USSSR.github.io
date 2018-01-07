@@ -1,6 +1,14 @@
 footer {
     @include align-items(center);
+    @include xm {
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
+    }
     border-top: 1px solid $white-select;
+    @include xm {
+        border-top:none;
+    }
     padding: 0.5em 0;
     font-size: 10px;
     color: $footer-hover;
@@ -15,11 +23,23 @@ footer {
         margin: 0;
         @include relative(-9px)
     }
+    .four {
+        @include xm {
+            border-top: 1px solid $white-select;
+            padding-top: 30px;
+            @include flexbox();
+            @include justify-content(center);
+        }
+    }
     .eight {
         @include flexbox();
         @include justify-content(flex-end);
         img {
             @include relative(12px)
+        }
+        @include xm {
+            margin: 0;
+            @include justify-content(center);
         }
     }
 

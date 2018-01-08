@@ -5,14 +5,14 @@ import serializerJs from '../node_modules/form-serialize';
 import {TweenMax} from '../node_modules/gsap';
 import i18next from 'i18next';
 
-window.app = function () {
+window.app = () => {
 	const choices = [...document.getElementsByClassName('pick')],
 		homepage = document.getElementById('homepage'),
 		langs = [...document.getElementsByClassName('lang-select')],
 		search = document.getElementById('search-results'),
 		gender = document.querySelector('form').getAttribute('name');
 
-	i18next.init(config.translation, function(err, t) {
+	i18next.init(config.translation, function (err, t) {
 		updateContent();
 	});
 	let buildAform = (forGender) => {
@@ -132,70 +132,69 @@ window.app = function () {
             </div>
         </form>
 		`;
-
-return template(config[forGender]);
+			return template(config[forGender]);
 		},
-	startCounter = (value) => {
-		const counter = {var: 0};
-		const tal = document.getElementById('total');
-		TweenMax.to(counter, 4, {
-			var: value,
-			onUpdate () {
-				tal.innerHTML = Math.ceil(counter.var);
-			},
-			ease: Power1.easeInOut
-		});
-	},
-	getWhatYouWorth = (data) => {
-		let result = 0;
-		for(let i in config.results){
-			let x = closestMax(config.results[i].criteria, data[i]),
-				index = config.results[i].criteria.indexOf(x),
-				y = config.results[i].koef[index]
-			result += y;
-		}
+		startCounter = (value) => {
+			const counter = {var: 0};
+			const tal = document.getElementById('total');
+			TweenMax.to(counter, 4, {
+				var: value,
+				onUpdate () {
+					tal.innerHTML = Math.ceil(counter.var);
+				},
+				ease: Power1.easeInOut
+			});
+		},
+		getWhatYouWorth = (data) => {
+			let result = 0;
+			for (let i in config.results) {
+				let x = closestMax(config.results[i].criteria, data[i]),
+					index = config.results[i].criteria.indexOf(x),
+					y = config.results[i].koef[index]
+				result += y;
+			}
 
-		if (data.gender === 'female') {
-			result *= 1.3
-		}
-		localStorage.setItem('gender', JSON.stringify(data.gender))
-		updateContent()
-		startCounter(result);
-	},
-	emulateSubmit = () => {
-		document.getElementById('calculate').addEventListener('click', (evt) => {
-			evt.preventDefault();
-			const form = document.getElementById('main-data'),
-				mainData = serializerJs(form, {hash: true});
-			homepage.style.display = 'none';
-			search.style.display = 'block';
-			getWhatYouWorth(mainData);
-		});
-	},
-	initContent = (content, gender) => {
-		homepage.innerHTML = '';
-		homepage.insertAdjacentHTML('beforeend', content);
+			if (data.gender === 'female') {
+				result *= 1.3
+			}
+			localStorage.setItem('gender', JSON.stringify(data.gender))
+			updateContent()
+			startCounter(result);
+		},
+		emulateSubmit = () => {
+			document.getElementById('calculate').addEventListener('click', (evt) => {
+				evt.preventDefault();
+				const form = document.getElementById('main-data'),
+					mainData = serializerJs(form, {hash: true});
+				homepage.style.display = 'none';
+				search.style.display = 'block';
+				getWhatYouWorth(mainData);
+			});
+		},
+		initContent = (content, gender) => {
+			homepage.innerHTML = '';
+			homepage.insertAdjacentHTML('beforeend', content);
 
-		let lng = JSON.parse(localStorage.getItem('lng'));
-		i18next.changeLanguage(lng);
+			let lng = JSON.parse(localStorage.getItem('lng'));
+			i18next.changeLanguage(lng);
 
-		document.getElementById('default').style.display = 'none';
-		[...document.querySelectorAll('.gender')].forEach((x) => x.innerHTML = gender);
-		document.getElementById('user-choice').style.display = 'block';
-		rangesliderJs.create(document.getElementById('age'), config.rangeSlider);
-		rangesliderJs.create(document.getElementById('height'), config.rangeSlider);
-		emulateSubmit();
-	};
+			document.getElementById('default').style.display = 'none';
+			[...document.querySelectorAll('.gender')].forEach((x) => x.innerHTML = gender);
+			document.getElementById('user-choice').style.display = 'block';
+			rangesliderJs.create(document.getElementById('age'), config.rangeSlider);
+			rangesliderJs.create(document.getElementById('height'), config.rangeSlider);
+			emulateSubmit();
+		};
 
 	/*TODO move to a method */
-	for(let i of choices){
+	for (let i of choices) {
 		i.addEventListener('click', (evt) => {
 			const gender = evt.target.closest('a').dataset.gender,
 				content = buildAform(gender);
 			initContent(content, gender);
 		})
 	}
-	for(let i of langs){
+	for (let i of langs) {
 		i.addEventListener('click', (evt) => {
 			const lang = (evt.target.closest('a').dataset.lang);
 			localStorage.setItem('lng', JSON.stringify(lang))
@@ -203,24 +202,23 @@ return template(config[forGender]);
 		});
 	}
 
-	function closestMax(arr, closestTo){
+	function closestMax(arr, closestTo) {
 		let closest = Math.max.apply(null, arr);
-		for(let i = 0; i < arr.length; i++){
-			if(arr[i] >= closestTo && arr[i] < closest) closest = arr[i];
+		for (let i = 0; i < arr.length; i++) {
+			if (arr[i] >= closestTo && arr[i] < closest) closest = arr[i];
 		}
 		return closest;
 	}
 
 	function updateContent() {
-
 		document.getElementById('default').innerHTML = i18next.t('key');
-		if(document.querySelector('.main-explanation')){
+		if (document.querySelector('.main-explanation')) {
 			document.getElementsByClassName('main-explanation')[0].innerHTML = i18next.t('more');
-			[...document.querySelectorAll('.pick span')].forEach(function(x, i){
+			[...document.querySelectorAll('.pick span')].forEach(function (x, i) {
 				x.innerHTML = i18next.t(`option-${i}`);
 			})
 		}
-		if(document.getElementById('main-data')){
+		if (document.getElementById('main-data')) {
 			let gender = document.querySelector('input[name=gender]').value;
 			document.querySelector('.age h4 span').innerHTML = i18next.t('age');
 			document.querySelector('.height h4 span').innerHTML = i18next.t('height');

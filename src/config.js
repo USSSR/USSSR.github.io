@@ -44,18 +44,6 @@ const config = {
 	},
 	translation: {
 		lng: 'en',
-		gender: {
-			male: {
-				sex: 'boyfriend',
-				feature: 'Beard',
-				body: 'Body'
-			},
-			female: {
-				sex: 'girlfriend',
-				feature: 'BoobSize',
-				body: 'Figure'
-			}
-		},
 		debug: false,
 		resources: {
 			en: {

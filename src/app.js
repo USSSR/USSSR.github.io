@@ -22,7 +22,7 @@ window.app = function () {
 		<form name="${data.gender}" method="post" action="javascript:void(0)" id="main-data" >
 			<div class="age">
                 <div class="four">
-                    <h4>Age <output id="age-out">${data.age}</output></h4>
+                    <h4><span>Age</span> <output id="age-out">${data.age}</output></h4>
                 </div>
                 <div class="eight">
                     <div class="slidecontainer">
@@ -32,7 +32,7 @@ window.app = function () {
             </div>		
             <div class="height">
                 <div class="four columns">
-                    <h4>Height (cm) <output id="height-out">${data.height}</output></h4>
+                    <h4><span>Height</span> (cm) <output id="height-out">${data.height}</output></h4>
                 </div>
                 <div class="eight">
                     <div class="slidecontainer">
@@ -222,8 +222,8 @@ return template(config[forGender]);
 		}
 		if(document.getElementById('main-data')){
 			let gender = document.querySelector('input[name=gender]').value;
-			document.querySelector('.age h4').innerHTML = i18next.t('age');
-			document.querySelector('.height h4').innerHTML = i18next.t('height');
+			document.querySelector('.age h4 span').innerHTML = i18next.t('age');
+			document.querySelector('.height h4 span').innerHTML = i18next.t('height');
 			document.querySelector('.haircolor h4').innerHTML = i18next.t('haircolor');
 			document.querySelector('.hairlength h4').innerHTML = i18next.t('hairlength');
 			document.querySelector('.feature h4').innerHTML = i18next.t(`feature-${gender}`);

@@ -19,20 +19,20 @@
             <h1>
                 <span id="default">Drinks Calculator</span>
                 <span id="user-choice">
-                    How many drinks for your <span id="gender"></span>?
+                    How many drinks for your <span class="gender"></span>?
                 </span>
             </h1>
         </div>
         <div class="lang-select">
-            <a href="javascript:void(0)"><img src="/assets/flag-de.png"></a>
-            <a href="javascript:void(0)"><img src="/assets/flag-en.png"></a>
-            <a href="javascript:void(0)"><img src="/assets/flag-es.png"></a>
+            <a data-lang="de" href="javascript:void(0)"><img src="/assets/flag-de.png"></a>
+            <a data-lang="en" href="javascript:void(0)"><img src="/assets/flag-en.png"></a>
+            <a data-lang="ua" href="javascript:void(0)"><img src="/assets/ukraine.png"></a>
         </div>
+        <div id="output" />
     </div>
 </header>
 
 <main class="app-main">
-
     <div class="container" id="homepage">
         <p class="main-explanation">Here you can calculate how many camels your girlfriend or boyfriend is worth. But first we need some information about the person.</p>
         <div class="twelve">
@@ -48,10 +48,9 @@
             </div>
         </div>
 
-
     </div>
     <div class="container" id="search-results">
-        <h2>Your boyfriend ist worth <span id="total">0</span> drinks.</h2>
+        <h2><span class="for-translation">Your <span class="gender"></span> ist worth</span> <span id="total">0</span><div class="drinks">drinks.</div> </h2>
         <div class="twelwe social">
             <a class="fb_button" href="https://www.facebook.com/sharer.php?u=http://kamelrechner.de/">Post on facebook</a>
             <a class="tw_button" href="https://twitter.com/share?via=Kamelrechner&amp;url=http://kamelrechner.de/&amp;text=My girlfriend is worth 75 camels.">Post on twitter</a>
@@ -60,7 +59,7 @@
 
         <div class="twelve">
             <form action="/" method="get">
-                <button type="submit" class="button" id="calculate">calculate again?</button>
+                <button type="submit" class="button" id="back-again">calculate again?</button>
             </form>
         </div>
     </div>
@@ -80,6 +79,6 @@
     </div>
 </footer>
 
-<script src="./assets/js/app.js"></script>
+<script src="./assets/js/app.js" async></script>
 </body>
 </html>

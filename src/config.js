@@ -42,6 +42,96 @@ const config = {
 		feature: ['boobs-a', 'boobs-b', 'boobs-c', 'boobs-d'],
 		body: ['thin', 'sporty', 'normal', 'chubby', 'fat']
 	},
+	translation: {
+		lng: 'en',
+		gender: {
+			male: {
+				sex: 'boyfriend',
+				feature: 'Beard',
+				body: 'Body'
+			},
+			female: {
+				sex: 'girlfriend',
+				feature: 'BoobSize',
+				body: 'Figure'
+			}
+		},
+		debug: false,
+		resources: {
+			en: {
+				translation: {
+					"key": "Drinks Calculator",
+					"more": "Here you can calculate how many camels your girlfriend or boyfriend is worth. But first we need some information about the person.",
+					"option-0": "How many Drinks for your girlfriend?",
+					"option-1": "How many Drinks for your boyfriend?",
+					"user-choice-male": "How many Drinks for your boyfriend?",
+					"user-choice-female": "How many Drinks for your girlfriend?",
+					"age": "Age",
+					"height": "Heoght (cm)",
+					"eyecolor": "Eyecolor",
+					"haircolor": "Haircolor",
+					"hairlength": "Hairlength",
+					"feature-male": "Beard",
+					"feature-female": "BoobSize",
+					"body-male": "Body",
+					"body-female": "Figure",
+					"calculate": "calculate",
+					"back": "calculate",
+					"male-answer":  "Your boyfriend is worth",
+					"female-answer": "Your girlfriend is worth",
+					"drinks": "drinks"
+				}
+			},
+			de: {
+				translation: {
+					"key": "Getränke Calculator",
+					"more": "Hier kannst du den Wert deiner Freundin, deines Freundes oder natürlich von dir selbst, in Kamelen berechnen. Hierzu benötigen wir aber erst ein paar Angaben zur Person.",
+					"option-0": "Wie viele Getränke ist dein Freund wert?",
+					"option-1": "Wie viele Getränke ist deine Freundin wert?",
+					"user-choice-female": "Wie viele Getränke ist deine Freundin wert?",
+					"user-choice-male": "Wie viele Getränke ist dein Freund wert?",
+					"age": "Alter",
+					"height": "Größe (cm)",
+					"eyecolor": "Augenfarbe",
+					"haircolor": "Haarlänge",
+					"hairlength": "Haarlänge",
+					"feature-male": "Bart",
+					"feature-female": "Körbchengröße",
+					"body-male": "Oberkörper",
+					"body-female": "Figur",
+					"calculate": "berechnen",
+					"back": "Nochmal Berechnen?",
+					"male-answer":  "Dein freund ist",
+					"female-answer": "Deine freundin ist",
+					"drinks": "getränke wert"
+				}
+			},
+			ua: {
+				translation: {
+					"key": "Пий сто грам",
+					"more": "Інстаграму на зло. Тут ви можете розрахувати, скільки спиртного ваша подруга чи хлопець вартує. Але спочатку нам потрібна деяка інформація про людину",
+					"option-0": "Скільки стаканів твій друг бахне за раз",
+					"option-1": "Скільки стаканів твоя подруга бахне за раз",
+					"user-choice-male": `Скільки стаканів твій друг бахне за раз`,
+					"user-choice-female": `Скільки стаканів твоя подруга бахне за раз`,
+					"age": "Вік",
+					"height": "Зріст (см)",
+					"eyecolor": "Колір очей",
+					"haircolor": "Колір волосся",
+					"hairlength": "Довжина волосся",
+					"feature-male": "Борода",
+					"feature-female": "Груди",
+					"body-male": "Торс",
+					"body-female": "Фігура",
+					"calculate": "рахувати",
+					"back": "Давай Наливай!",
+					"male-answer":  "Твій друг вартий",
+					"female-answer": "Твоя подруга варта",
+					"drinks": "стаканів алкоголю"
+				}
+			}
+		}
+	},
 	results: {
 		age: {
 			criteria: [14, 15, 18, 23, 28, 31, 41, 46, 51, 60, 70],

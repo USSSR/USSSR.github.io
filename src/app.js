@@ -3,10 +3,18 @@ import config from './config';
 import rangesliderJs from '../node_modules/rangeslider-pure/dist/range-slider';
 import serializerJs from '../node_modules/form-serialize';
 import {TweenMax} from '../node_modules/gsap';
+import i18next from 'i18next';
+
 window.app = function () {
 	const choices = [...document.getElementsByClassName('pick')],
 		homepage = document.getElementById('homepage'),
-		search = document.getElementById('search-results');
+		langs = [...document.getElementsByClassName('lang-select')],
+		search = document.getElementById('search-results'),
+		gender = document.querySelector('form').getAttribute('name');
+
+	i18next.init(config.translation, function(err, t) {
+		updateContent();
+	});
 	let buildAform = (forGender) => {
 			/* eslint max-len: ["error", { "code": 150 }]*/
 			const template =
@@ -150,6 +158,8 @@ return template(config[forGender]);
 		if (data.gender === 'female') {
 			result *= 1.3
 		}
+		localStorage.setItem('gender', JSON.stringify(data.gender))
+		updateContent()
 		startCounter(result);
 	},
 	emulateSubmit = () => {
@@ -165,18 +175,34 @@ return template(config[forGender]);
 	initContent = (content, gender) => {
 		homepage.innerHTML = '';
 		homepage.insertAdjacentHTML('beforeend', content);
+
+		let lng = JSON.parse(localStorage.getItem('lng'));
+		i18next.changeLanguage(lng);
+
 		document.getElementById('default').style.display = 'none';
-		document.getElementById('gender').innerHTML = gender;
+		[...document.querySelectorAll('.gender')].forEach((x) => x.innerHTML = gender);
 		document.getElementById('user-choice').style.display = 'block';
 		rangesliderJs.create(document.getElementById('age'), config.rangeSlider);
 		rangesliderJs.create(document.getElementById('height'), config.rangeSlider);
 		emulateSubmit();
 	};
-	choices.forEach((choice) => choice.addEventListener('click', (evt) => {
-		const gender = evt.target.closest('a').dataset.gender,
-			content = buildAform(gender);
-		initContent(content, gender);
-	}));
+
+	/*TODO move to a method */
+	for(let i of choices){
+		i.addEventListener('click', (evt) => {
+			const gender = evt.target.closest('a').dataset.gender,
+				content = buildAform(gender);
+			initContent(content, gender);
+		})
+	}
+	for(let i of langs){
+		i.addEventListener('click', (evt) => {
+			const lang = (evt.target.closest('a').dataset.lang);
+			localStorage.setItem('lng', JSON.stringify(lang))
+			i18next.changeLanguage(lang);
+		});
+	}
+
 	function closestMax(arr, closestTo){
 		let closest = Math.max.apply(null, arr);
 		for(let i = 0; i < arr.length; i++){
@@ -184,6 +210,36 @@ return template(config[forGender]);
 		}
 		return closest;
 	}
+
+	function updateContent() {
+
+		document.getElementById('default').innerHTML = i18next.t('key');
+		if(document.querySelector('.main-explanation')){
+			document.getElementsByClassName('main-explanation')[0].innerHTML = i18next.t('more');
+			[...document.querySelectorAll('.pick span')].forEach(function(x, i){
+				x.innerHTML = i18next.t(`option-${i}`);
+			})
+		}
+		if(document.getElementById('main-data')){
+			let gender = document.querySelector('input[name=gender]').value;
+			document.querySelector('.age h4').innerHTML = i18next.t('age');
+			document.querySelector('.height h4').innerHTML = i18next.t('height');
+			document.querySelector('.haircolor h4').innerHTML = i18next.t('haircolor');
+			document.querySelector('.hairlength h4').innerHTML = i18next.t('hairlength');
+			document.querySelector('.feature h4').innerHTML = i18next.t(`feature-${gender}`);
+			document.querySelector('.body h4').innerHTML = i18next.t(`body-${gender}`);
+			document.querySelector('#calculate').innerHTML = i18next.t('calculate');
+			document.getElementById('user-choice').innerHTML = i18next.t(`user-choice-${gender}`);
+			document.querySelector('#back-again').innerHTML = i18next.t('back');
+			document.querySelector('h2 .for-translation').innerHTML = i18next.t(`${gender}-answer`);
+			document.querySelector('h2 .drinks').innerHTML = i18next.t('drinks');
+		}
+	}
+
+	i18next.on('languageChanged', () => {
+		updateContent();
+	});
+
 };
 
 window.app();

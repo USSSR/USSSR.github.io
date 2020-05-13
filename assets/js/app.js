@@ -11889,26 +11889,26 @@ var config = {
 			},
 			de: {
 				translation: {
-					key: "Getränke Calculator",
+					key: "Getränke Rechner",
 					more: "Hier kannst du den Wert deiner Freundin, deines Freundes oder natürlich von dir selbst, in Kamelen berechnen. Hierzu benötigen wir aber erst ein paar Angaben zur Person.",
-					"option-0": "Wie viele Getränke ist dein Freund wert?",
-					"option-1": "Wie viele Getränke ist deine Freundin wert?",
+					"option-0": "Wie viele Getränke ist deine Freundin wert?",
+					"option-1": "Wie viele Getränke ist dein  Freund wert?",
 					"user-choice-female": "Wie viele Getränke ist deine Freundin wert?",
 					"user-choice-male": "Wie viele Getränke ist dein Freund wert?",
 					age: "Alter",
 					height: "Größe (cm)",
 					eyecolor: "Augenfarbe",
-					haircolor: "Haarlänge",
+					haircolor: "Haarfarbe",
 					hairlength: "Haarlänge",
 					"feature-male": "Bart",
 					"feature-female": "Körbchengröße",
 					"body-male": "Oberkörper",
 					"body-female": "Figur",
-					calculate: "berechnen",
+					calculate: "Berechnen",
 					back: "Nochmal Berechnen?",
-					"male-answer": "Dein freund ist",
-					"female-answer": "Deine freundin ist",
-					drinks: "getränke wert"
+					"male-answer": "Dein Freund ist",
+					"female-answer": "Deine Freundin ist",
+					drinks: "Getränke wert"
 				}
 			},
 			ua: {
